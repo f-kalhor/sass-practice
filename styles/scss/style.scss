@@ -1,0 +1,298 @@
+@import "variables";
+@import "mixins";
+
+* {
+    @include resetBody
+}
+
+body {
+    background-color: $bgColor;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: .8rem 3rem;
+    background-color: $primaryColor;
+
+}
+
+h3 {
+    @include textstyle (1.3rem, bold, $secondaryColor);
+}
+
+
+.navbar {
+
+    display: flex;
+    align-items: center;
+
+
+    img {
+        width: 40px;
+        border-radius: 50%;
+    }
+
+    nav {
+        align-items: center;
+        margin-right: 10px;
+        display: flex;
+    }
+
+    ul {
+        display: flex;
+        list-style-type: none;
+        margin-right: 40px;
+    }
+
+    a {
+        padding: 8px;
+        text-decoration: none;
+        transition: all .15s ease-in;
+        @include textstyle(1rem, bold, $secondaryColor);
+
+        &:hover {
+            color: $textColor;
+        }
+    }
+}
+
+.hamburgar-menu {
+    display: none;
+    align-items: center;
+    flex-direction: column;
+
+    span {
+        display: inline-block;
+        width: 20px;
+        background-color: $secondaryColor;
+        height: 2px;
+        margin: 2px;
+    }
+}
+
+
+.main {
+    display: flex;
+    margin: 2rem 3rem;
+
+    aside {
+        width: 25%;
+        flex-direction: column;
+        margin-right: 25px;
+        @include bodyStyle;
+        @include BoxStyle;
+
+        div {
+            background-color: $primaryColor;
+            width: 100%;
+            height: 110px;
+            margin: 25px 15px;
+            text-align: center;
+            line-height: 105px;
+            @include BoxStyle;
+        }
+
+        a {
+            display: inline-block;
+            width: 100%;
+            @include textstyle(1rem, bold, $secondaryColor);
+            text-decoration: none;
+        }
+    }
+
+    main {
+        width: 75%;
+        @include bodyStyle;
+        @include BoxStyle;
+        flex-direction: column;
+
+
+        h1 {
+            @include textstyle(3rem, bold, $primaryColor);
+            margin: 2rem 0 3rem;
+        }
+
+        img {
+            width: 250px;
+            height: 250px;
+            @include BoxStyle;
+        }
+
+        p {
+            @include textstyle(1.5rem, bold, $textColor)
+        }
+    }
+
+}
+
+.cards {
+    width: calc(100% - 6rem);
+    display: flex;
+    margin: 0 auto;
+    padding: 20px 0;
+    gap: 30px;
+}
+
+.card {
+    justify-content: space-between;
+    @include BoxStyle;
+
+    img {
+        width: 100%;
+    }
+
+    .text-content {
+        padding: 15px;
+        line-height: 1.5rem;
+        background-color: $secondaryColor;
+
+        p {
+            margin: 10px 0;
+            @include textstyle(1rem, 100, $textColor );
+
+        }
+
+        span {
+            display: inline-block;
+            margin: 10px 0;
+            @include textstyle (.9rem, bold, $primaryColor)
+        }
+
+    }
+}
+
+footer {
+    margin-top: 10px;
+    background-color: $primaryColor;
+    padding: 1.5rem 3rem;
+    display: flex;
+
+    .summary {
+        width: 55%;
+        p{
+            @include textstyle(1 rem , 100 , $secondaryColor)
+        }
+    }
+
+    .links {
+        padding-left: 40px;
+
+            ul{
+                list-style-type: none;
+            }
+
+        a{
+            display: inline-block;
+            text-decoration: none;
+            @include textstyle(1.2rem , 100 , $secondaryColor);
+            margin-top: 5px;
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+/////////////////////// responsive ////////////////////////
+
+
+@include media(M) {
+    .hamburgar-menu {
+
+        display: flex;
+
+    }
+
+    .navbar {
+        display: none;
+    }
+
+    .main {
+        flex-direction: column-reverse;
+        margin: 1rem;
+
+        main {
+
+            width: calc(100% - 2rem);
+            margin-bottom: 20px;
+            height: 500px;
+
+            p {
+                font-size: 1.3rem;
+            }
+        }
+
+        aside {
+            width: calc(100% - 2rem);
+            // padding: ;
+        }
+    }
+
+    .cards {
+        flex-direction: column;
+        margin: 0 auto;
+    }
+
+    footer {
+        flex-direction: column;
+
+        .summary{
+            width: 90%;
+            margin: 0 auto;
+            margin-bottom: 20px;
+        }
+
+        .links {
+            padding-left: 2rem;
+        }
+    }
+
+}
+
+
+
+@include media (L) {
+    .hamburgar-menu {
+        display: none;
+    }
+
+    .navbar {
+        display: flex;
+    }
+
+    .main {
+
+        main {
+
+            margin-bottom: 20px;
+            height: 500px;
+            @include bodyStyle;
+            background-color: aqua;
+
+            p {
+                font-size: 1.3rem;
+            }
+        }
+
+        aside {
+            width: 30%;
+
+        }
+    }
+
+    .cards {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        margin: 0 auto;
+
+    }
+
+
+}

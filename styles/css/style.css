@@ -1,0 +1,271 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  background-color: #edf2f7;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.8rem 3rem;
+  background-color: #654fef;
+}
+
+h3 {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #fff;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+}
+.navbar img {
+  width: 40px;
+  border-radius: 50%;
+}
+.navbar nav {
+  align-items: center;
+  margin-right: 10px;
+  display: flex;
+}
+.navbar ul {
+  display: flex;
+  list-style-type: none;
+  margin-right: 40px;
+}
+.navbar a {
+  padding: 8px;
+  text-decoration: none;
+  transition: all 0.15s ease-in;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #fff;
+}
+.navbar a:hover {
+  color: rgb(27, 27, 27);
+}
+
+.hamburgar-menu {
+  display: none;
+  align-items: center;
+  flex-direction: column;
+}
+.hamburgar-menu span {
+  display: inline-block;
+  width: 20px;
+  background-color: #fff;
+  height: 2px;
+  margin: 2px;
+}
+
+.main {
+  display: flex;
+  margin: 2rem 3rem;
+}
+.main aside {
+  width: 25%;
+  flex-direction: column;
+  margin-right: 25px;
+  padding: 1rem;
+  background-color: #fff;
+  height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+}
+.main aside div {
+  background-color: #654fef;
+  width: 100%;
+  height: 110px;
+  margin: 25px 15px;
+  text-align: center;
+  line-height: 105px;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+}
+.main aside a {
+  display: inline-block;
+  width: 100%;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #fff;
+  text-decoration: none;
+}
+.main main {
+  width: 75%;
+  padding: 1rem;
+  background-color: #fff;
+  height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+  flex-direction: column;
+}
+.main main h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #654fef;
+  margin: 2rem 0 3rem;
+}
+.main main img {
+  width: 250px;
+  height: 250px;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+}
+.main main p {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: rgb(27, 27, 27);
+}
+
+.cards {
+  width: calc(100% - 6rem);
+  display: flex;
+  margin: 0 auto;
+  padding: 20px 0;
+  gap: 30px;
+}
+
+.card {
+  justify-content: space-between;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+}
+.card img {
+  width: 100%;
+}
+.card .text-content {
+  padding: 15px;
+  line-height: 1.5rem;
+  background-color: #fff;
+}
+.card .text-content p {
+  margin: 10px 0;
+  font-size: 1rem;
+  font-weight: 100;
+  color: rgb(27, 27, 27);
+}
+.card .text-content span {
+  display: inline-block;
+  margin: 10px 0;
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: #654fef;
+}
+
+footer {
+  margin-top: 10px;
+  background-color: #654fef;
+  padding: 1.5rem 3rem;
+  display: flex;
+}
+footer .summary {
+  width: 55%;
+}
+footer .summary p {
+  font-size: 1 rem;
+  font-weight: 100;
+  color: #fff;
+}
+footer .links {
+  padding-left: 40px;
+}
+footer .links ul {
+  list-style-type: none;
+}
+footer .links a {
+  display: inline-block;
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: 100;
+  color: #fff;
+  margin-top: 5px;
+}
+
+@media (max-width: 768px) {
+  .hamburgar-menu {
+    display: flex;
+  }
+  .navbar {
+    display: none;
+  }
+  .main {
+    flex-direction: column-reverse;
+    margin: 1rem;
+  }
+  .main main {
+    width: calc(100% - 2rem);
+    margin-bottom: 20px;
+    height: 500px;
+  }
+  .main main p {
+    font-size: 1.3rem;
+  }
+  .main aside {
+    width: calc(100% - 2rem);
+  }
+  .cards {
+    flex-direction: column;
+    margin: 0 auto;
+  }
+  footer {
+    flex-direction: column;
+  }
+  footer .summary {
+    width: 90%;
+    margin: 0 auto;
+    margin-bottom: 20px;
+  }
+  footer .links {
+    padding-left: 2rem;
+  }
+}
+@media (min-width: 768px) and (max-width: 1200px) {
+  .hamburgar-menu {
+    display: none;
+  }
+  .navbar {
+    display: flex;
+  }
+  .main main {
+    margin-bottom: 20px;
+    height: 500px;
+    padding: 1rem;
+    background-color: #fff;
+    height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: aqua;
+  }
+  .main main p {
+    font-size: 1.3rem;
+  }
+  .main aside {
+    width: 30%;
+  }
+  .cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: 0 auto;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
